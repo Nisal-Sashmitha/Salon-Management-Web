@@ -1,59 +1,88 @@
 "use client";
-import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useState, useEffect } from "react";
 
 function HomeHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [isHome, setIsHome] = useState(true);
+  const pathname = usePathname();
+
+  console.log(pathname, isHome);
+
+  //check if we are in home or not using the pathname
+  useEffect(() => {
+    setIsHome(pathname === "/");
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 70) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
   return (
-    <header
-      className="relative w-full h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/assets/HomeHeaderImage.jpg')" }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
+    <header className={`w-full bg-center fixed top-0 left-0 z-50 h-20`}>
       {/* Navigation and Content */}
-      <div className="relative z-10 h-full flex flex-col justify-between">
+      <div className={`relative z-10 flex flex-col justify-between h-20`}>
         {/* Navigation Bar */}
-        <nav className="flex justify-between items-center p-4 md:p-8">
-          <div className="text-white text-3xl md:text-5xl font-bold font-mono">
-            Salon Floración
+        <nav
+          className={`flex justify-between items-center p-4 md:p-8 transition-all duration-800 ${
+            hasScrolled || !isHome ? "bg-black" : "transparent"
+          }`}
+        >
+          <div className="text-white text-3xl md:text-5xl font-bold font-mono pl-5">
+            <Image
+              src="/assets/HomeLogo.png"
+              alt="Salon Sash Logo"
+              width={250}
+              height={82.67}
+            />
           </div>
           <ul className="hidden md:flex space-x-6 md:space-x-14 mr-7 font-mono">
             <li>
-              <a
-                href="#"
+              <Link
+                href="/"
                 className="text-white text-lg md:text-xl font-extrabold rounded-full hover:underline"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/appointment"
                 className="text-white text-lg md:text-xl font-extrabold rounded-full hover:underline"
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="#about"
                 className="text-white text-lg md:text-xl font-extrabold rounded-full hover:underline"
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="text-white text-lg md:text-xl font-extrabold rounded-full hover:underline"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
           {/* Hamburger Menu for Mobile */}
@@ -70,9 +99,9 @@ function HomeHeader() {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M4 6h16M4 10h16M4 14h16M4 18h16"
                   />
                 </svg>
@@ -94,9 +123,9 @@ function HomeHeader() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   {" "}
                   <line x1="18" y1="6" x2="6" y2="18" />{" "}
@@ -104,49 +133,36 @@ function HomeHeader() {
                 </svg>
               </span>
             </button>
-            <a
-              href="#"
+            <Link
+              href="/"
               className="text-2xl font-extrabold hover:underline"
               onClick={toggleMenu}
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-2xl font-extrabold hover:underline"
               onClick={toggleMenu}
             >
               Services
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-2xl font-extrabold hover:underline"
               onClick={toggleMenu}
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-2xl font-extrabold hover:underline"
               onClick={toggleMenu}
             >
               Contact
-            </a>
+            </Link>
           </div>
         )}
-
-        {/* Quote and CTA Section */}
-        <div className="flex flex-col items-center justify-center text-center text-white px-4 md:px-6 h-full">
-          <blockquote className="text-3xl md:text-5xl md:text-nowrap font-semibold italic max-w-2xl md:max-w-3xl mx-auto">
-            &quot;Pamper yourself, you deserve it.&quot;
-          </blockquote>
-          <p className="mt-4 text-base md:text-xl text-gray-300">
-            Discover our premium services tailored just for you.
-          </p>
-          <button className="mt-8 px-6 py-3 md:px-9 md:py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold text-base md:text-lg rounded-full hover:shadow-lg hover:scale-105 transition transform">
-            Book Now
-          </button>
-        </div>
       </div>
     </header>
   );
