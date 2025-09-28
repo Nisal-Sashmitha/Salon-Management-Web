@@ -1,78 +1,85 @@
 import React from "react";
+import { Card } from "../ui/card";
+
+import Image from "next/image";
+import { Button } from "../ui/button";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const services = [
   {
-    name: "Haircut",
-    description: "Professional haircut tailored to your style.",
-    price: 2500,
-    discount: 10,
-    icon: "💇‍♀️",
+    title: "Hair Colors, tearments & Styling",
+    description:
+      "Expert cuts, colors, and treatments for stunning transformations.",
+    image: "/assets/hair-styling.png",
+    price: "From Rs. 1200",
   },
   {
-    name: "Facial",
-    description: "Relaxing facial treatment for glowing skin.",
-    price: 3500,
-    discount: 15,
-    icon: "💆‍♀️",
+    title: "Beauty Treatments",
+    description: "Rejuvenating facials and skincare for radiant, glowing skin.",
+    image: "/assets/facial.png",
+    price: "From Rs. 100",
   },
   {
-    name: "Manicure",
-    description: "Pampering manicure for beautiful nails.",
-    price: 2000,
-    discount: 5,
-    icon: "💅",
-  },
-  {
-    name: "Hair Coloring",
-    description: "Vibrant hair coloring with premium products.",
-    price: 5000,
-    discount: 20,
-    icon: "🎨",
+    title: "Nail Art",
+    description:
+      "Precise manicures and creative nail designs for perfect hands.",
+    image: "/assets/nail-art.png",
+    price: "From $45",
   },
 ];
 
 const ServicePreviewSection = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center mb-8 text-gray-900 tracking-tight">Our Signature Services</h2>
-        <p className="text-center text-lg text-gray-500 mb-12">Discover our most popular treatments, designed to make you look and feel your best.</p>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, idx) => (
-            <div key={idx} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-7 flex flex-col items-center text-center border border-gray-100">
-              <span className="text-5xl mb-4 text-gray-800">{service.icon}</span>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.name}</h3>
-              <p className="text-gray-500 mb-4">{service.description}</p>
-              <div className="flex items-center justify-center gap-2 mb-2">
-                {service.discount > 0 ? (
-                  <div className="flex items-center gap-4">
-                    <div className="flex flex-col items-end">
-                      <span className="flex items-center gap-1 text-base text-red-400 line-through font-semibold">
-                        Rs. <span>{service.price}</span>
-                      </span>
-                      <span className="text-xs text-red-500 font-medium">Previous</span>
-                    </div>
-                    <div className="flex flex-col items-start">
-                      <span className="flex items-center gap-1 text-xl font-bold text-gray-900">
-                        Rs. <span>{Math.round(service.price * (1 - service.discount / 100))}</span>
-                      </span>
-                      <span className="text-xs text-green-600 font-medium">Now</span>
-                    </div>
-                    <span className="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full border border-red-200 shadow">{service.discount}% OFF</span>
-                  </div>
-                ) : (
-                  <span className="flex items-center gap-1 text-lg font-medium text-gray-900">Rs. <span>{service.price}</span></span>
-                )}
-              </div>
-                {/* Removed 'View All Services' button as requested */}
-            </div>
-          ))}
+    <section className="py-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+            Our Signature Services
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Indulge in our premium beauty and wellness treatments, crafted to
+            enhance your natural elegance.
+          </p>
         </div>
-        <div className="text-center mt-12">
-          <Link href="/appointment">
-            <button className="px-8 py-4 text-xl font-semibold bg-black text-white rounded-full shadow-lg hover:bg-gray-900 transition-colors">Explore All Services</button>
-          </Link>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <Card key={index} className="subtle-card group overflow-hidden">
+              <div className="relative overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={400}
+                  height={256}
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-primary">
+                    {service.price}
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="font-heading text-xl font-semibold mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  {service.description}
+                </p>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                >
+                  <Link href="/services">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

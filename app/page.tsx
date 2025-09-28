@@ -1,8 +1,11 @@
 import Image from "next/image";
-import AboutSection from "@/components/home/AboutSection";
+import FeaturesSection from "@/components/home/AboutSection";
 import Link from "next/link";
-import ContactUsSection from "@/components/home/ContactUsSection";
 import ServicePreviewSection from "@/components/home/ServicePreviewSection";
+import CTASection from "@/components/home/CTASection";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+// import { ArrowRight, Star, Sparkles, Clock, Award } from "lucide-react";
 
 export default function Home() {
   return (
@@ -25,16 +28,31 @@ export default function Home() {
           <p className="mt-4 text-base md:text-xl text-gray-300">
             Ladies Hair and Beauty Salon.
           </p>
-          <Link href="/appointment">
-            <button className="mt-8 px-6 py-3 md:px-9 md:py-3 bg-white text-black font-bold text-base md:text-lg rounded-full hover:shadow-lg hover:scale-105 transition transform">
-              Book Now
-            </button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+            <Button
+              asChild
+              size="lg"
+              className="luxury-button text-lg px-8 py-4"
+            >
+              <Link href="/appointment">
+                Book Your Appointment
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="text-lg px-8 py-4 bg-white/10 border-white/30 text-white hover:bg-white/20"
+            >
+              <Link href="/services">View Services</Link>
+            </Button>
+          </div>
         </div>
       </div>
-      <AboutSection />
+      <FeaturesSection />
       <ServicePreviewSection />
-      <ContactUsSection />
+      <CTASection />
     </>
   );
 }

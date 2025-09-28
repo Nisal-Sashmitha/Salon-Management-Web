@@ -44,12 +44,14 @@ function HomeHeader() {
           }`}
         >
           <div className="text-white text-3xl md:text-5xl font-bold font-mono pl-5">
-            <Image
-              src="/assets/HomeLogo.png"
-              alt="Salon Sash Logo"
-              width={250}
-              height={82.67}
-            />
+            <Link href="/">
+              <Image
+                src="/assets/HomeLogo.png"
+                alt="Salon Sash Logo"
+                width={250}
+                height={82.67}
+              />
+            </Link>
           </div>
           <ul className="hidden md:flex space-x-6 md:space-x-14 mr-7 font-mono">
             <li>
@@ -62,7 +64,7 @@ function HomeHeader() {
             </li>
             <li>
               <Link
-                href="/appointment"
+                href="/services"
                 className="text-white text-lg md:text-xl font-extrabold rounded-full hover:underline"
               >
                 Services
@@ -70,7 +72,7 @@ function HomeHeader() {
             </li>
             <li>
               <Link
-                href="#about"
+                href="about"
                 className="text-white text-lg md:text-xl font-extrabold rounded-full hover:underline"
               >
                 About
@@ -78,7 +80,7 @@ function HomeHeader() {
             </li>
             <li>
               <Link
-                href="#"
+                href="/contact"
                 className="text-white text-lg md:text-xl font-extrabold rounded-full hover:underline"
               >
                 Contact

@@ -1,23 +1,36 @@
 import React from "react";
+import { Star, Sparkles, Clock, Award } from "lucide-react";
 
-const AboutSection = () => (
-  <section className="w-full bg-white py-16 px-4 md:px-0 flex justify-center">
-    <div className="max-w-5xl w-full bg-white rounded-xl p-8 md:p-12 text-center">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif tracking-tight">About Us</h2>
-      <p className="text-lg md:text-lg text-gray-700 mb-6 leading-relaxed">
-        We’re a ladies’ hair and beauty salon dedicated to giving you exactly what you want – every time. From flawless hair styling to rejuvenating beauty treatments, we tailor each service to your style and needs.
-      </p>
-      <p className="text-lg md:text-lg text-gray-700 mb-6 leading-relaxed">
-        Our carefully selected range of products lets you choose what’s best for you, whether it’s luxury quality, budget-friendly options, or the perfect in-between.
-      </p>
-      <p className="text-lg md:text-lg text-gray-700 mb-6 leading-relaxed">
-        With our friendly, skilled team and a welcoming atmosphere, you’ll feel right at home from the moment you walk in. Because here, beauty is all about you.
-      </p>
-      <p className="text-lg md:text-lg text-gray-700 leading-relaxed italic">
-        Because at our salon, it’s not just about beauty – it’s about you.
-      </p>
-    </div>
-  </section>
+const stats = [
+  { icon: Star, value: "Friendly", label: "Service" },
+  { icon: Award, value: "Premium", label: "Quality Products" },
+  { icon: Sparkles, value: "Modern", label: "Equipments" },
+  { icon: Clock, value: "Flexible", label: "Booking Hours" },
+];
+
+const FeaturesSection = () => (
+  <>
+    {/* Stats Section */}
+    <section className="py-16 bg-accent/30">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="flex justify-center mb-4">
+                <div className="p-3 bg-primary/10 rounded-full">
+                  <stat.icon className="h-6 w-6 text-primary" />
+                </div>
+              </div>
+              <div className="font-heading text-3xl font-bold text-primary mb-2">
+                {stat.value}
+              </div>
+              <div className="text-muted-foreground text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </>
 );
 
-export default AboutSection;
+export default FeaturesSection;
