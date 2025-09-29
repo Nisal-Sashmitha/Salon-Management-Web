@@ -25,7 +25,7 @@ const services = [
     description:
       "Precise manicures and creative nail designs for perfect hands.",
     image: "/assets/nail-art.png",
-    price: "From $45",
+    price: "Rs. 200",
   },
 ];
 

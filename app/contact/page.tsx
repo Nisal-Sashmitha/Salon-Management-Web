@@ -7,6 +7,7 @@ import {
   Instagram,
   Twitter,
   Youtube,
+  MessageCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -25,6 +26,13 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 
 const Contact = () => {
   const contactInfo = [
+    {
+      icon: MessageCircle,
+      title: "Whatsapp",
+      detail: "+94754108211",
+      url: "https://wa.me/94754108211",
+      description: "Send us a message or call us for immediate assistance",
+    },
     {
       icon: Phone,
       title: "Phone",
@@ -109,9 +117,18 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">{info.title}</h3>
-                        <p className="font-medium text-primary mb-1">
-                          {info.detail}
-                        </p>
+                        {info.url ? (
+                          <a href={info.url} target="_blank">
+                            <p className="font-medium text-primary mb-1">
+                              {info.detail}
+                            </p>
+                          </a>
+                        ) : (
+                          <p className="font-medium text-primary mb-1">
+                            {info.detail}
+                          </p>
+                        )}
+
                         <p className="text-sm text-muted-foreground">
                           {info.description}
                         </p>

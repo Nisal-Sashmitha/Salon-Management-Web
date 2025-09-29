@@ -46,7 +46,7 @@ function HomeHeader() {
           <div className="text-white text-3xl md:text-5xl font-bold font-mono pl-5">
             <Link href="/">
               <Image
-                src="/assets/HomeLogo.png"
+                src="/assets/saash-logo.png"
                 alt="Salon Sash Logo"
                 width={250}
                 height={82.67}

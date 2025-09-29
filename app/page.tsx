@@ -34,7 +34,7 @@ export default function Home() {
               size="lg"
               className="luxury-button text-lg px-8 py-4"
             >
-              <Link href="/appointment">
+              <Link href="/services">
                 Book Your Appointment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>

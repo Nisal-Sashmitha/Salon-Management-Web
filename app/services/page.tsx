@@ -444,10 +444,7 @@ const Services = () => {
                           className="w-full luxury-button"
                           disabled
                         >
-                          <Link
-                            aria-disabled="true"
-                            href={`/appointment?service=${service.id}`}
-                          >
+                          <Link aria-disabled="true" href={`/contact`}>
                             Book Now
                           </Link>
                         </Button>
