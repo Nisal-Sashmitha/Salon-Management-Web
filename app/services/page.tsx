@@ -76,6 +76,32 @@ const services = [
   },
   {
     id: 5,
+    title: "Derma pro cleanup",
+    category: "beauty",
+    description:
+      "Essential basic facial cleansing treatment to remove impurities, unclog pores, and refresh skin using professional techniques and derma pro products.",
+    duration: "45 min",
+    originalPrice: 1500,
+    currentPrice: 1500,
+    discount: false,
+    rating: 4.7,
+    popular: false,
+  },
+  {
+    id: 6,
+    title: "Derma pro facial",
+    category: "beauty",
+    description:
+      "Facial treatment targeting deep cleansing, exfoliation, and nourishment using professional techniques and derma pro products for rejuvenated, healthy-looking skin.",
+    duration: "60 min",
+    originalPrice: 2000,
+    currentPrice: 2000,
+    discount: false,
+    rating: 4.7,
+    popular: false,
+  },
+  {
+    id: 7,
     title: "Full Dressing",
     category: "beauty",
     description:
@@ -87,7 +113,7 @@ const services = [
     rating: 4.8,
   },
   {
-    id: 6,
+    id: 8,
     title: "Make Up",
     category: "beauty",
     description:
@@ -99,7 +125,7 @@ const services = [
     popular: true,
   },
   {
-    id: 7,
+    id: 9,
     title: "Hair Style",
     category: "hair",
     description:
@@ -111,7 +137,7 @@ const services = [
     rating: 4.8,
   },
   {
-    id: 8,
+    id: 10,
     title: "Saree Drapping",
     category: "beauty",
     description: "Kandyan and indian saree drapping for all occasions",
@@ -122,7 +148,7 @@ const services = [
     rating: 4.8,
   },
   {
-    id: 9,
+    id: 11,
     title: "Eyebrow Shaping",
     category: "beauty",
     description: "Professional eyebrow threading and shaping",
@@ -133,18 +159,18 @@ const services = [
     rating: 4.6,
   },
   {
-    id: 10,
+    id: 12,
     title: "Upperlip",
     category: "beauty",
     description: "",
     duration: "5 min",
-    originalPrice: 150,
+    originalPrice: 100,
     currentPrice: 100,
-    discount: true,
+    discount: false,
     rating: 4.7,
   },
   {
-    id: 11,
+    id: 13,
     title: "Eyebrow shaping and Upperlip",
     category: "beauty",
     description: "",
@@ -155,7 +181,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 12,
+    id: 14,
     title: "Pedicure",
     category: "beauty",
     description: "",
@@ -166,7 +192,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 16,
+    id: 15,
     title: "Manicure",
     category: "beauty",
     description: "",
@@ -177,7 +203,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 17,
+    id: 16,
     title: "Relaxing/ Rebonding",
     category: "hair",
     description:
@@ -190,7 +216,7 @@ const services = [
     popular: true,
   },
   {
-    id: 18,
+    id: 17,
     title: "Keratin Treatment",
     category: "hair",
     description:
@@ -203,7 +229,46 @@ const services = [
     popular: true,
   },
   {
+    id: 18,
+    title: "Condition Treatment",
+    category: "hair",
+    description:
+      "Deep conditioning therapy using L'Oréal products with hair steaming and vitamin infusion to restore moisture, repair damage, and enhance hair health and shine.",
+    duration: "45 - 60 min (depending on the hair)",
+    originalPrice: 2000,
+    currentPrice: 1500,
+    discount: true,
+    contactUsForPrice: false,
+    popular: false,
+  },
+  {
     id: 19,
+    title: "Blowdry",
+    category: "hair",
+    description:
+      "Complete hair color transformation using L'Oréal professional color products. Pricing varies by hair length and thickness. Special discount available - expert application guaranteed.",
+    duration: "2 hours (depending on the hair)",
+    originalPrice: 1000,
+    currentPrice: 800,
+    contactUsForPrice: false,
+    discount: true,
+    rating: 4.9,
+  },
+  {
+    id: 20,
+    title: "Iron",
+    category: "hair",
+    description:
+      "Complete hair color transformation using L'Oréal professional color products. Pricing varies by hair length and thickness. Special discount available - expert application guaranteed.",
+    duration: "2 hours (depending on the hair)",
+    originalPrice: 1500,
+    currentPrice: 1000,
+    contactUsForPrice: false,
+    discount: true,
+    rating: 4.9,
+  },
+  {
+    id: 21,
     title: "Full hair fashion color",
     category: "hair",
     description:
@@ -216,7 +281,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 20,
+    id: 22,
     title: "Full hair lines",
     category: "hair",
     description:
@@ -229,7 +294,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 21,
+    id: 23,
     title: "Balayage",
     category: "hair",
     description:
@@ -242,7 +307,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 22,
+    id: 24,
     title: "Ombré",
     category: "hair",
     description:
@@ -255,7 +320,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 23,
+    id: 25,
     title: "Gray Hair Cover",
     category: "hair",
     description:
@@ -268,7 +333,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 24,
+    id: 26,
     title: "Hand wax",
     category: "beauty",
     description:
@@ -280,7 +345,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 25,
+    id: 27,
     title: "Leg wax",
     category: "beauty",
     description:
