@@ -334,10 +334,9 @@ const services = [
     discount: true,
     rating: 4.9,
   },
-
   {
     id: 28,
-    title: "Leg wax - FUl leg",
+    title: "Leg wax - Full leg",
     category: "beauty",
     description:
       "Professional leg hair removal using normal waxing products for smooth, long-lasting results with expert technique and proper aftercare for comfortable experience.",
