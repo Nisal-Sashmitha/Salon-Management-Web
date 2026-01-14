@@ -68,7 +68,7 @@ const services = [
     description:
       "Comprehensive hydrating treatment using Ume Care products with hydradermabrasion, galvanic therapy, high frequency, proton light therapy, and rejuvenating jelly mask for ultimate skin renewal.",
     duration: "90 min",
-    originalPrice: 9000,
+    originalPrice: 10000,
     currentPrice: 7000,
     discount: true,
     rating: 4.7,
@@ -181,7 +181,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 16,
+    id: 14,
     title: "Relaxing/ Rebonding",
     category: "hair",
     description:
@@ -194,7 +194,7 @@ const services = [
     popular: true,
   },
   {
-    id: 17,
+    id: 15,
     title: "Keratin Treatment",
     category: "hair",
     description:
@@ -207,7 +207,20 @@ const services = [
     popular: true,
   },
   {
-    id: 18,
+    id: 16,
+    title: "Hair Botox Treatment",
+    category: "hair",
+    description:
+      "An anti-frizz hair treatment that seals the cuticles, balances moisture and pH levels, and restores intense shine, softness, and silkiness. Suitable for all hair types and ideal for reducing frizz and improving overall hair health",
+    duration: "2 - 4 hours (depending on the hair)",
+    contactUsForPrice: true,
+    originalPrice: 2500,
+    currentPrice: 1800,
+    discount: true,
+    rating: 4.9,
+  },
+  {
+    id: 17,
     title: "Condition Treatment",
     category: "hair",
     description:
@@ -220,20 +233,19 @@ const services = [
     popular: false,
   },
   {
-    id: 19,
+    id: 18,
     title: "Blowdry",
     category: "hair",
     description:
       "Complete hair color transformation using L'Oréal professional color products. Pricing varies by hair length and thickness. Special discount available - expert application guaranteed.",
     duration: "2 hours (depending on the hair)",
     originalPrice: 1000,
-    currentPrice: 800,
     contactUsForPrice: false,
-    discount: true,
+    discount: false,
     rating: 4.9,
   },
   {
-    id: 20,
+    id: 19,
     title: "Iron",
     category: "hair",
     description:
@@ -246,7 +258,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 21,
+    id: 20,
     title: "Full hair fashion color",
     category: "hair",
     description:
@@ -259,7 +271,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 22,
+    id: 21,
     title: "Full hair lines",
     category: "hair",
     description:
@@ -272,7 +284,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 23,
+    id: 22,
     title: "Balayage",
     category: "hair",
     description:
@@ -285,7 +297,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 24,
+    id: 23,
     title: "Ombré",
     category: "hair",
     description:
@@ -298,7 +310,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 25,
+    id: 24,
     title: "Gray Hair Cover",
     category: "hair",
     description:
@@ -311,7 +323,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 26,
+    id: 25,
     title: "Hand wax (full hand)",
     category: "beauty",
     description:
@@ -323,7 +335,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 27,
+    id: 26,
     title: "Leg wax - Half leg",
     category: "beauty",
     description:
@@ -335,7 +347,7 @@ const services = [
     rating: 4.9,
   },
   {
-    id: 28,
+    id: 27,
     title: "Leg wax - Full leg",
     category: "beauty",
     description:
@@ -471,7 +483,7 @@ const Services = () => {
                           <span className="text-2xl font-bold text-primary">
                             Rs. {service.currentPrice}
                           </span>
-                          {service.originalPrice > service.currentPrice && (
+                          {service.originalPrice > service.currentPrice! && (
                             <span className="text-lg text-muted-foreground line-through">
                               Rs. {service.originalPrice}
                             </span>
@@ -483,7 +495,7 @@ const Services = () => {
                       <Badge variant="destructive" className="text-xs">
                         {getDiscountPercentage(
                           service.originalPrice,
-                          service.currentPrice
+                          service.currentPrice!
                         )}{" "}
                         OFF
                       </Badge>
