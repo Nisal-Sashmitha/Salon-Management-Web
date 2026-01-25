@@ -81,8 +81,8 @@ const services = [
     description:
       "Essential basic facial cleansing treatment to remove impurities, unclog pores, and refresh skin using professional techniques and derma pro products.",
     duration: "45 min",
-    originalPrice: 1500,
-    currentPrice: 1500,
+    originalPrice: 1700,
+    currentPrice: 1700,
     discount: false,
     rating: 4.7,
     popular: false,
@@ -94,8 +94,8 @@ const services = [
     description:
       "Facial treatment targeting deep cleansing, exfoliation, and nourishment using professional techniques and derma pro products for rejuvenated, healthy-looking skin.",
     duration: "60 min",
-    originalPrice: 2000,
-    currentPrice: 2000,
+    originalPrice: 2200,
+    currentPrice: 2200,
     discount: false,
     rating: 4.7,
     popular: false,
