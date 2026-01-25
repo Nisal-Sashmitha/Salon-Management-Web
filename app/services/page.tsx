@@ -31,7 +31,7 @@ const services = [
       "A luxurious facial with natural gold extracts to brighten, rejuvenate, and give your skin a radiant glow",
     duration: "75 min",
     originalPrice: 5000,
-    currentPrice: 3500,
+    currentPrice: 4200,
     discount: true,
     rating: 5.0,
     popular: true,
@@ -44,7 +44,7 @@ const services = [
       "Ideal for pimple-prone skin; calms, clears, and brightens with a natural pearl glow.",
     duration: "75 min",
     originalPrice: 5500,
-    currentPrice: 3700,
+    currentPrice: 4500,
     discount: true,
     rating: 4.8,
   },
@@ -381,7 +381,7 @@ const Services = () => {
           selectedCategory === "all" || service.category === selectedCategory;
         return matchesSearch && matchesCategory;
       }),
-    [searchTerm, selectedCategory]
+    [searchTerm, selectedCategory],
   );
 
   return (
@@ -495,7 +495,7 @@ const Services = () => {
                       <Badge variant="destructive" className="text-xs">
                         {getDiscountPercentage(
                           service.originalPrice,
-                          service.currentPrice!
+                          service.currentPrice!,
                         )}{" "}
                         OFF
                       </Badge>
